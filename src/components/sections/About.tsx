@@ -28,7 +28,7 @@ export function About() {
                 className="group relative glass-card rounded-2xl p-6 hover:border-cyan-500/40 transition-all"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl border border-cyan-500/20 group-hover:border-cyan-500/40 transition-colors">
+                  <div className="p-3 bg-linear-to-br from-cyan-500/20 to-blue-500/20 rounded-xl border border-cyan-500/20 group-hover:border-cyan-500/40 transition-colors">
                     <Icon className="size-6 text-cyan-400" />
                   </div>
                   <div className="flex-1">

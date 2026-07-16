@@ -54,7 +54,7 @@ export function Contact() {
               <h3 className="text-2xl font-bold mb-6">{t("contact.getintouch")}</h3>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
+                  <div className="p-3 rounded-xl bg-linear-to-br from-cyan-500/20 to-blue-500/20">
                     <Mail className="size-5 text-cyan-400" />
                   </div>
                   <div>
@@ -65,7 +65,7 @@ export function Contact() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
+                  <div className="p-3 rounded-xl bg-linear-to-br from-cyan-500/20 to-blue-500/20">
                     <MapPin className="size-5 text-cyan-400" />
                   </div>
                   <div>
@@ -98,7 +98,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="rounded-2xl p-6 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30">
+            <div className="rounded-2xl p-6 bg-linear-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30">
               <h4 className="text-lg font-semibold mb-2">{t("contact.opportunities")}</h4>
               <p className="text-sm text-foreground/70 leading-relaxed">{t("contact.opportunities_desc")}</p>
             </div>
@@ -149,7 +149,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={sending}
-              className="w-full group relative px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.6)] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full group relative px-6 py-3.5 rounded-xl font-semibold text-white bg-linear-to-r from-cyan-500 to-blue-600 hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.6)] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <span className="flex items-center justify-center gap-2">
                 {sending ? (

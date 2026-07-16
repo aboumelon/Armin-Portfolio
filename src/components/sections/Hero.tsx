@@ -20,7 +20,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30"
           >
             <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-sm text-cyan-500 dark:text-cyan-300 font-medium">{t("hero.badge")}</span>
@@ -33,7 +33,7 @@ export function Hero() {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
-              <span className="bg-gradient-to-r from-foreground via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-foreground via-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 {t("hero.title")}
               </span>
             </motion.h1>
@@ -63,7 +63,7 @@ export function Hero() {
           >
             <a
               href="#projects"
-              className="group relative px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white overflow-hidden transition-all hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.6)]"
+              className="group relative px-7 py-3.5 bg-linear-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white overflow-hidden transition-all hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.6)]"
             >
               <span className="relative z-10 flex items-center gap-2">
                 {t("hero.cta_primary")}

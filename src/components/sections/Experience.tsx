@@ -22,8 +22,8 @@ export function Experience() {
               className="relative glass-card rounded-2xl p-6 md:p-8 hover:border-cyan-500/40 transition-all"
             >
               <div className="flex flex-col md:flex-row gap-5">
-                <div className="md:w-48 flex-shrink-0">
-                  <div className="inline-flex px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-500/30">
+                <div className="md:w-48 shrink-0">
+                  <div className="inline-flex px-3 py-1.5 rounded-full bg-linear-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-500/30">
                     <span className="text-xs font-semibold text-cyan-500 dark:text-cyan-300 font-mono">{e.year}</span>
                   </div>
                   <h4 className="text-lg font-bold mt-3">{t(e.roleKey)}</h4>

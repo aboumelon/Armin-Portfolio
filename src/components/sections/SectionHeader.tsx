@@ -11,7 +11,7 @@ export function SectionHeader({ title, subtitle }: { title: string; subtitle?: s
       <h2 className="text-4xl md:text-5xl font-bold mb-4">
         <span className="text-gradient-neon">{title}</span>
       </h2>
-      <div className="w-20 h-1 mx-auto rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+      <div className="w-20 h-1 mx-auto rounded-full bg-linear-to-r from-cyan-400 to-blue-500" />
       {subtitle && (
         <p className="mt-5 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           {subtitle}

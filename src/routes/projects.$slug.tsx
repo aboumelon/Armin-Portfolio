@@ -14,10 +14,7 @@ export const Route = createFileRoute("/projects/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [
-          { title: "Project not found" },
-          { name: "robots", content: "noindex" },
-        ],
+        meta: [{ title: "Project not found" }, { name: "robots", content: "noindex" }],
       };
     }
     const { project } = loaderData;
@@ -65,10 +62,7 @@ function ProjectDetailPage() {
           {t("project.back", "Back to projects")}
         </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <p className="font-mono text-xs uppercase tracking-widest text-cyan-400">
             {t("project.eyebrow", "Case Study")}
           </p>
@@ -85,7 +79,7 @@ function ProjectDetailPage() {
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-medium hover:opacity-90 transition"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-linear-to-r from-cyan-500 to-blue-500 text-white text-sm font-medium hover:opacity-90 transition"
               >
                 <GithubIcon className="size-4" />
                 {t("project.view_github", "View on GitHub")}
@@ -105,20 +99,22 @@ function ProjectDetailPage() {
           </div>
         </motion.div>
 
-        {/* Demo video placeholder */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="mt-12 glass-card rounded-2xl overflow-hidden"
-        >
-          <div className="relative w-full aspect-video bg-black/40">
-            {project.videoUrl ? (
-              project.videoUrl.includes("youtube.com") ||
+        {/* Demo video section (Only renders if videoUrl exists) */}
+        {project.videoUrl && (
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mt-12 glass-card rounded-2xl overflow-hidden"
+          >
+            <div className="relative w-full aspect-video bg-black/40">
+              {project.videoUrl.includes("youtube.com") ||
               project.videoUrl.includes("youtu.be") ||
               project.videoUrl.includes("vimeo.com") ? (
                 <iframe
-                  src={project.videoUrl}
+                  src={project.videoUrl
+                    .replace("watch?v=", "embed/")
+                    .replace("youtu.be/", "youtube.com/embed/")}
                   title={t(project.titleKey)}
                   className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -131,28 +127,10 @@ function ProjectDetailPage() {
                   poster={project.image}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-              )
-            ) : (
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground">
-                {project.image && (
-                  <img
-                    src={project.image}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover opacity-30"
-                  />
-                )}
-                <div className="relative flex flex-col items-center gap-2">
-                  <div className="size-16 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center">
-                    <PlayCircle className="size-8 text-cyan-400" />
-                  </div>
-                  <p className="text-sm font-mono">
-                    {t("project.video_placeholder", "Demo video coming soon")}
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
-        </motion.section>
+              )}
+            </div>
+          </motion.section>
+        )}
 
         {/* Tech stack */}
         <motion.section
@@ -161,9 +139,7 @@ function ProjectDetailPage() {
           transition={{ delay: 0.2 }}
           className="mt-6 glass-card rounded-2xl p-6"
         >
-          <h2 className="text-xl font-semibold mb-4">
-            {t("project.stack", "Tech Stack")}
-          </h2>
+          <h2 className="text-xl font-semibold mb-4">{t("project.stack", "Tech Stack")}</h2>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag: string) => (
               <span
@@ -183,12 +159,8 @@ function ProjectDetailPage() {
           transition={{ delay: 0.3 }}
           className="mt-6 glass-card rounded-2xl p-6"
         >
-          <h2 className="text-xl font-semibold mb-3">
-            {t("project.overview", "Overview")}
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            {t(project.descKey)}
-          </p>
+          <h2 className="text-xl font-semibold mb-3">{t("project.overview", "Overview")}</h2>
+          <p className="text-muted-foreground leading-relaxed">{t(project.descKey)}</p>
         </motion.section>
       </div>
     </main>

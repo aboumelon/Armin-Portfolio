@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
+import { projects } from "@/content/profile";
 
 export const Route = createFileRoute("/projects/alpr")({
   head: () => ({
@@ -18,7 +19,12 @@ export const Route = createFileRoute("/projects/alpr")({
 
 function AlprPage() {
   const { t } = useTranslation();
+  
+  // پیدا کردن دیتای پروژه ALPR برای گرفتن لینک ویدیو
+  const alprProject = projects.find(p => p.slug === "alpr");
+  
   const stack = ["FastAPI", "Python", "OpenCV", "React", "TypeScript", "WebSockets"];
+  
   return (
     <main className="pt-32 pb-24 relative">
       <div className="container-x max-w-3xl">
@@ -32,6 +38,29 @@ function AlprPage() {
           <span className="text-gradient-neon">{t("projects.items.alpr.title")}</span>
         </h1>
 
+     
+        {/* Video Player Section */}
+        {alprProject?.videoUrl && (
+          <section className="mt-12 glass-card rounded-2xl overflow-hidden relative w-full aspect-video bg-black/40">
+            {alprProject.videoUrl.includes("youtube.com") || alprProject.videoUrl.includes("youtu.be") ? (
+              <iframe
+              
+                src={alprProject.videoUrl.replace("watch?v=", "embed/").replace("youtu.be/", "youtube.com/embed/")}
+                title="ALPR Demo"
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <video
+                src={alprProject.videoUrl}
+                controls
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+          </section>
+        )}
+
         <section className="mt-12 glass-card rounded-2xl p-6">
           <h2 className="text-xl font-semibold mb-3">{t("alpr.overview_title")}</h2>
           <p className="text-muted-foreground leading-relaxed">{t("alpr.overview")}</p>
@@ -41,7 +70,7 @@ function AlprPage() {
           <h2 className="text-xl font-semibold mb-3">{t("alpr.stack_title")}</h2>
           <div className="flex flex-wrap gap-2">
             {stack.map((s) => (
-              <span key={s} className="px-2.5 py-1 rounded-md bg-black/5 dark:bg-white/5 border border-border text-xs font-mono">{s}</span>
+              <span key={s} className="px-2.5 py-1 rounded-md bg-black/5 dark:bg-white/5 border border-border text-xs font-mono text-muted-foreground hover:text-cyan-400 transition">{s}</span>
             ))}
           </div>
         </section>

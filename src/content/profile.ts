@@ -3,10 +3,10 @@ import alprCover from "@/assets/alpr-cover.jpg";
 export const profile = {
   name: "Armin Aboutalebi",
   handle: "@Armin1831",
-  email: "armin.aboutalebi@example.com",
+  email: "aboumelon1831@gmail.com",
   github: "https://github.com/Armin1831",
-  linkedin: "https://linkedin.com/in/",
-  telegram: "https://t.me/",
+  linkedin: "https://linkedin.com/in/armin-aboutalebia",
+  telegram: "https://t.me/AbouMelon",
   location: "Iran",
   avatar: "https://avatars.githubusercontent.com/u/99498108?v=4",
 };
@@ -17,6 +17,7 @@ export const skills: { frontend: Skill[]; backend: Skill[]; tools: Skill[] } = {
   frontend: [
     { name: "React", level: 92 },
     { name: "Next.js", level: 85 },
+    { name: "TanStack Start", level: 85 },
     { name: "TypeScript", level: 80 },
     { name: "Tailwind CSS", level: 90 },
     { name: "Redux", level: 78 },
@@ -28,7 +29,7 @@ export const skills: { frontend: Skill[]; backend: Skill[]; tools: Skill[] } = {
     { name: "PostgreSQL", level: 75 },
     { name: "REST APIs", level: 88 },
     { name: "WebSockets", level: 70 },
-    { name: "Firebase", level: 72 },
+    { name: "RabbitMQ", level: 72 },
   ],
   tools: [
     { name: "Git & GitHub", level: 90 },
@@ -41,9 +42,23 @@ export const skills: { frontend: Skill[]; backend: Skill[]; tools: Skill[] } = {
 };
 
 export const allTech = [
-  "React", "Next.js", "TypeScript", "Tailwind", "FastAPI", "Python",
-  "PostgreSQL", "Docker", "OpenCV", "Linux", "Git", "REST",
-  "Redux", "Firebase", "SCSS", "WebSockets",
+  "React",
+  "Next.js",
+  "TanStack Start",
+  "TypeScript",
+  "Tailwind",
+  "FastAPI",
+  "Python",
+  "PostgreSQL",
+  "Docker",
+  "OpenCV",
+  "Linux",
+  "Git",
+  "REST",
+  "Redux",
+  "RabbitMQ",
+  "SCSS",
+  "WebSockets",
 ];
 
 export type Project = {
@@ -69,14 +84,14 @@ export const projects: Project[] = [
     href: "/projects/alpr",
     image: alprCover,
     github: "https://github.com/Armin1831",
-    demo: null,
-    videoUrl: null,
+    demo: "https://alpr-front.vercel.app",
+    videoUrl: "https://youtu.be/FgpcCHHnpbw",
   },
   {
     slug: "portfolio",
     titleKey: "projects.items.portfolio.title",
     descKey: "projects.items.portfolio.desc",
-    tags: ["TypeScript", "React", "Tailwind"],
+    tags: ["TanStack Start", "TypeScript", "Tailwind", "Radix UI"],
     featured: false,
     href: "/projects/portfolio",
     github: "https://github.com/Armin1831/Armin-Portfolio",
@@ -92,7 +107,7 @@ export const projects: Project[] = [
     href: "/projects/shop-redux",
     github: "https://github.com/Armin1831/shop-redux",
     demo: null,
-    videoUrl: null,
+    videoUrl: "https://youtu.be/BMQylURXoa8",
   },
   {
     slug: "todo-firebase",
@@ -103,12 +118,21 @@ export const projects: Project[] = [
     href: "/projects/todo-firebase",
     github: "https://github.com/Armin1831/todo-firebase",
     demo: "https://firebase-react-todoapp.netlify.app",
-    videoUrl: null,
+    videoUrl: "https://youtu.be/bfkUqT1ZGhc",
   },
 ];
 
 export const experience = [
-  { year: "2024 — Now", roleKey: "experience.items.0.role", companyKey: "experience.items.0.company", descKey: "experience.items.0.desc" },
-  { year: "2022 — 2024", roleKey: "experience.items.1.role", companyKey: "experience.items.1.company", descKey: "experience.items.1.desc" },
-  { year: "2020 — 2022", roleKey: "experience.items.2.role", companyKey: "experience.items.2.company", descKey: "experience.items.2.desc" },
+  {
+    year: "2025 — Now",
+    roleKey: "experience.items.0.role",
+    companyKey: "experience.items.0.company",
+    descKey: "experience.items.0.desc",
+  },
+  {
+    year: "2022 — 2024",
+    roleKey: "experience.items.1.role",
+    companyKey: "experience.items.1.company",
+    descKey: "experience.items.1.desc",
+  }
 ];

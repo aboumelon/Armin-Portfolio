@@ -38,7 +38,7 @@ export function Skills() {
                         whileInView={{ width: `${s.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 + idx * 0.07, ease: "easeOut" }}
-                        className={`h-full rounded-full bg-gradient-to-r ${cat.gradient} shadow-[0_0_10px_rgba(6,182,212,0.4)]`}
+                        className={`h-full rounded-full bg-linear-to-r ${cat.gradient} shadow-[0_0_10px_rgba(6,182,212,0.4)]`}
                       />
                     </div>
                   </div>

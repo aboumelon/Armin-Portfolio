@@ -26,7 +26,11 @@ export function Projects() {
           <div className="group relative glass-card rounded-2xl overflow-hidden hover:border-cyan-500/40 transition-all">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image */}
-              <Link to="/projects/$slug" params={{ slug: featured.slug }} className="relative block overflow-hidden bg-black/30 aspect-[16/10] lg:aspect-auto">
+              <Link
+                to="/projects/$slug"
+                params={{ slug: featured.slug }}
+                className="relative block overflow-hidden bg-black/30 aspect-16/10 lg:aspect-auto"
+              >
                 {featured.image && (
                   <img
                     src={featured.image}
@@ -35,37 +39,65 @@ export function Projects() {
                     loading="lazy"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-transparent to-purple-500/10 pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent lg:bg-gradient-to-l pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/20 via-transparent to-purple-500/10 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-r from-background/40 to-transparent lg:bg-linear-to-l pointer-events-none" />
               </Link>
 
               {/* Content */}
               <div className="relative p-8 flex flex-col justify-center">
                 <div className="absolute -top-24 -right-24 size-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
                 <div className="relative">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-500/30 mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-linear-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-500/30 mb-4">
                     <Shield className="size-3.5 text-cyan-400" />
-                    <span className="text-xs font-medium text-cyan-500 dark:text-cyan-300">{t("projects.featured_badge")}</span>
+                    <span className="text-xs font-medium text-cyan-500 dark:text-cyan-300">
+                      {t("projects.featured_badge")}
+                    </span>
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-3">{t(featured.titleKey)}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-5">{t(featured.descKey)}</p>
+                  <p className="text-muted-foreground leading-relaxed mb-5">
+                    {t(featured.descKey)}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {featured.tags.map((tag) => (
-                      <span key={tag} className="px-2.5 py-1 rounded-md bg-black/5 dark:bg-white/5 border border-border text-xs font-mono text-muted-foreground">
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 rounded-md bg-black/5 dark:bg-white/5 border border-border text-xs font-mono text-muted-foreground"
+                      >
                         {tag}
                       </span>
                     ))}
                   </div>
                   <div className="flex flex-wrap items-center gap-4">
-                    <Link to="/projects/$slug" params={{ slug: featured.slug }} className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-400 hover:gap-2.5 transition-all">
+                    <Link
+                      to="/projects/$slug"
+                      params={{ slug: featured.slug }}
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-400 hover:gap-2.5 transition-all"
+                    >
                       {t("projects.view_case")}
                       <ArrowUpRight className="size-4" />
                     </Link>
-                    {featured.github && (
-                      <a href={featured.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition">
-                        <GithubIcon className="size-4" /> GitHub
-                      </a>
-                    )}
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      {featured.github && (
+                        <a
+                          href={featured.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition"
+                        >
+                          <GithubIcon className="size-4" /> GitHub
+                        </a>
+                      )}
+                      {featured.demo && (
+                        <a
+                          href={featured.demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition"
+                        >
+                          <ExternalLink className="size-3.5" /> Live demo
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -96,7 +128,10 @@ export function Projects() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{t(p.descKey)}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {p.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 border border-border text-xs font-mono text-muted-foreground">
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 border border-border text-xs font-mono text-muted-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
