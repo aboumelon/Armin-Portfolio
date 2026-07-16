@@ -6,20 +6,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
-    // پلاگین تیلویند نسخه ۴
     tailwindcss(),
-    
-    // پشتیبانی از مسیردهی‌های کاستوم (مثل @/components)
     tsconfigPaths(),
-    
-    // کانفیگ اصلی TanStack Start
     tanstackStart({
       server: {
-        // همان ارجاع به فایل server.ts که خود پروژه نیاز داشت
-        entry: "server",
+        entry: "server"
       },
     }),
-    
     react(),
   ],
 });
