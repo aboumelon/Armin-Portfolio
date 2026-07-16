@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "brand": "Full-Stack Developer"
+  },
+  "hero": {
+    "badge": "Available for new projects",
+    "title": "Full-Stack Developer",
+    "subtitle": "React, Next.js & FastAPI",
+    "description": "I build modern web products end-to-end — fast, accessible interfaces with React and Next.js, paired with robust Python backends in FastAPI. Currently exploring computer vision and real-time systems.",
+    "cta_primary": "View Projects",
+    "cta_secondary": "Get in touch"
+  },
+  "about": {
+    "title": "About & Philosophy",
+    "subtitle": "I care about shipping clean, performant software — from pixel-level UI to thoughtful APIs and inference pipelines.",
+    "frontend": "Modern Frontend",
+    "frontend_desc": "Type-safe React and Next.js with Tailwind, focused on performance, accessibility and great DX.",
+    "backend": "Backend & APIs",
+    "backend_desc": "Production-grade FastAPI services with auth, background workers and clean data layers.",
+    "realtime": "Real-Time & CV",
+    "realtime_desc": "Low-latency pipelines and computer vision with OpenCV — from ALPR to live dashboards.",
+    "fullstack": "Full-Stack Delivery",
+    "fullstack_desc": "End-to-end ownership: design, ship, monitor, iterate. One person, one product, full stack."
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "The tools I reach for to bring ideas to life.",
+    "tech_title": "Other tech I work with",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & Infra"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A few selected projects that showcase the way I build.",
+    "featured_badge": "Featured Project",
+    "other_title": "Other Projects",
+    "view_case": "View case study",
+    "items": {
+      "alpr": {
+        "title": "ALPR — Automatic License Plate Recognition",
+        "desc": "End-to-end ALPR system: a FastAPI inference backend with OpenCV pipelines and a React dashboard for live recognition, history and analytics."
+      },
+      "portfolio": {
+        "title": "Armin Portfolio",
+        "desc": "My personal portfolio website built with React, TypeScript and Tailwind — bilingual, themeable and animated."
+      },
+      "shop": {
+        "title": "Shop Redux",
+        "desc": "A shop interface built with React and Redux, styled with SCSS — cart, filters and clean state management."
+      },
+      "todo": {
+        "title": "Todo Firebase",
+        "desc": "A real-time todo app powered by Firebase auth and Firestore, deployed on Netlify."
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "A timeline of roles and milestones in my journey as a developer.",
+    "timeline": "Professional Timeline",
+    "items": {
+      "0": { "role": "Full-Stack Developer", "company": "Independent / Freelance", "desc": "Building bilingual web apps and AI-powered tools end-to-end, including the ALPR system." },
+      "1": { "role": "Frontend Engineer", "company": "Product Team", "desc": "Shipped Next.js apps, design systems and performance improvements." },
+      "2": { "role": "Software Engineer", "company": "Early career", "desc": "Foundational work across Python, REST APIs and React." }
+    }
+  },
+  "contact": {
+    "title": "Let's build something",
+    "subtitle": "Open to freelance and full-time opportunities. The fastest way to reach me is email.",
+    "getintouch": "Get In Touch",
+    "email": "Email",
+    "location": "Location",
+    "location_value": "Available for Remote Work",
+    "connect": "Connect",
+    "opportunities": "Open for Opportunities",
+    "opportunities_desc": "Currently available for full-stack roles, freelance work, and consulting on real-time / computer vision projects.",
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "name_placeholder": "Your name",
+      "email_placeholder": "your@email.com",
+      "subject": "Subject",
+      "subject_placeholder": "Project inquiry",
+      "message": "Message",
+      "message_placeholder": "Tell me about your project...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thanks! Your message has been sent.",
+      "error": "Something went wrong. Please try again or email me directly."
+    },
+
+    "footer": "© 2026 Full-Stack Developer Portfolio. Built with React, TypeScript and Tailwind CSS."
+  },
+  "alpr": {
+    "back": "Back to home",
+    "overview_title": "Overview",
+    "overview": "A complete Automatic License Plate Recognition pipeline. The backend is a FastAPI service exposing inference and management endpoints; the frontend is a React dashboard with real-time updates, recognition history and analytics.",
+    "stack_title": "Stack",
+    "challenges_title": "Challenges",
+    "challenges": "Designing a low-latency inference pipeline, handling diverse plate formats, and streaming results to the dashboard without dropping frames.",
+    "result_title": "Result",
+    "result": "A reliable system used end-to-end, with clean separation between detection, OCR and presentation layers."
+  }
+}

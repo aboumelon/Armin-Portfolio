@@ -1,0 +1,6 @@
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  esbuild: false
+minimumReleaseAgeExclude:
+  - '@lovable.dev/mcp-js@0.22.2'
+  - '@lovable.dev/vite-tanstack-config@2.7.6'

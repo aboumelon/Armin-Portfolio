@@ -1,0 +1,142 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-purple: var(--neon-purple);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  --radius: 0.875rem;
+  --font-sans: "Inter", "Vazirmatn", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Vazirmatn", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --background: #f0f4f8;
+  --foreground: #0a0a14;
+  --card: #ffffff;
+  --card-foreground: #0a0a14;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a14;
+  --primary: #0a0a14;
+  --primary-foreground: #f0f4f8;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #0a0a14;
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  --accent: #e9ebef;
+  --accent-foreground: #0a0a14;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --ring: rgba(6, 182, 212, 0.4);
+
+  --neon-cyan: #06b6d4;
+  --neon-blue: #3b82f6;
+  --neon-purple: #a855f7;
+}
+
+.dark {
+  --background: #0a0a0f;
+  --foreground: #f0f4f8;
+  --card: rgba(15, 15, 25, 0.6);
+  --card-foreground: #f0f4f8;
+  --popover: #0f0f1a;
+  --popover-foreground: #f0f4f8;
+  --primary: #f0f4f8;
+  --primary-foreground: #0a0a0f;
+  --secondary: #1a1a2e;
+  --secondary-foreground: #f0f4f8;
+  --muted: #1a1a2e;
+  --muted-foreground: #94a3b8;
+  --accent: rgba(255, 255, 255, 0.05);
+  --accent-foreground: #f0f4f8;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: rgba(6, 182, 212, 0.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  html[dir="rtl"] body {
+    font-family: "Vazirmatn", "Inter", system-ui, sans-serif;
+  }
+  html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 {
+    font-family: "Vazirmatn", system-ui, sans-serif;
+    letter-spacing: 0;
+  }
+}
+
+@utility container-x {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  max-width: 80rem;
+}
+
+@utility text-gradient-neon {
+  background-image: linear-gradient(to right, #22d3ee, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass-card {
+  background-image: linear-gradient(to bottom right, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
