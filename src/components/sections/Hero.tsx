@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { ArrowRight, Send } from "lucide-react";
-import { Github, Linkedin } from "@/components/icons";
-import { profile } from "@/content/profile";
+import { ArrowRight } from "lucide-react";
+
 
 export function Hero() {
   const { t } = useTranslation();
@@ -78,29 +77,6 @@ export function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="flex items-center justify-center gap-3 pt-2"
-          >
-            {[
-              { href: profile.github, Icon: Github, label: "GitHub" },
-              { href: profile.linkedin, Icon: Linkedin, label: "LinkedIn" },
-              { href: profile.telegram, Icon: Send, label: "Telegram" },
-            ].map(({ href, Icon, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="p-3 rounded-lg bg-accent border border-border hover:border-cyan-500/40 hover:text-cyan-400 transition-all text-muted-foreground"
-              >
-                <Icon className="size-4" />
-              </a>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
     </section>

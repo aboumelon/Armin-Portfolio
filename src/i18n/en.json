@@ -11,7 +11,7 @@
   "hero": {
     "badge": "Available for new projects",
     "title": "Full-Stack Developer",
-    "subtitle": "FastAPI, TanStack Start, React & Next",
+    "subtitle": "FastAPI, React, Next, TanStack Start",
     "description": "I build production-grade web products end-to-end — crafting fast, type-safe interfaces with TanStack Start and React, paired with high-performance Python backends in FastAPI. Specializing in real-time systems and computer vision integration.",
     "cta_primary": "View Projects",
     "cta_secondary": "Get in touch"
@@ -20,7 +20,7 @@
     "title": "About & Philosophy",
     "subtitle": "I care about shipping clean, performant software — from pixel-level UI to thoughtful APIs and inference pipelines.",
     "frontend": "Modern Frontend",
-    "frontend_desc": "Type-safe React development using modern meta-frameworks like TanStack Start and Next.js, styled with Tailwind CSS, and focused on stellar DX and accessibility.",
+    "frontend_desc": "Type-safe React development using modern meta-frameworks like TanStack Start and NextJs, styled with Tailwind CSS, and focused on stellar DX and accessibility.",
     "backend": "Backend & APIs",
     "backend_desc": "Production-ready APIs with FastAPI, incorporating secure authentication, asynchronous task queues, and optimized database layers.",
     "realtime": "Real-Time & CV",
@@ -68,12 +68,12 @@
     "items": {
       "0": {
         "role": "Full-Stack Developer",
-        "company": "Independent / Freelance",
+        "company": "Amic",
         "desc": "Building bilingual web apps and AI-powered tools end-to-end, including the ALPR system."
       },
       "1": {
         "role": "Frontend Engineer",
-        "company": "Product Team",
+        "company": "Independent / Freelance",
         "desc": "Shipped Next.js apps, design systems and performance improvements."
       },
       "2": {
@@ -89,7 +89,7 @@
     "getintouch": "Get In Touch",
     "email": "Email",
     "location": "Location",
-    "location_value": "Available for Remote Work",
+    "location_value": "Tehran - Available for Remote Work",
     "connect": "Connect",
     "opportunities": "Open for Opportunities",
     "opportunities_desc": "Currently available for full-stack roles, freelance work, and consulting on real-time / computer vision projects.",

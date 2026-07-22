@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportError } from "../lib/error-reporting";
 import "@/i18n";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -41,7 +41,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -81,10 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Full-Stack Developer — Portfolio" },
-      { name: "description", content: "Portfolio of a full-stack developer (React, Next.js, FastAPI)." },
+      {
+        name: "description",
+        content: "Portfolio of a full-stack developer (React, Next.js, FastAPI).",
+      },
       { property: "og:type", content: "website" },
     ],
     links: [
+      { rel: "icon", href: "/portfolio.ico" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -127,8 +131,14 @@ function RootComponent() {
       <div className="relative min-h-screen bg-background text-foreground">
         <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/4 size-96 bg-cyan-500/15 rounded-full blur-[120px] animate-pulse" />
-          <div className="absolute bottom-0 right-1/4 size-96 bg-blue-500/15 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 size-96 bg-purple-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
+          <div
+            className="absolute bottom-0 right-1/4 size-96 bg-blue-500/15 rounded-full blur-[120px] animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 size-96 bg-purple-500/10 rounded-full blur-[120px] animate-pulse"
+            style={{ animationDelay: "2s" }}
+          />
         </div>
         <Nav />
         <Outlet />

@@ -1,12 +1,13 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Mail, MapPin, Send, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-import { Github, Linkedin } from "@/components/icons";
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Github } from "@/components/icons";
+
 import { SectionHeader } from "./SectionHeader";
 import { profile } from "@/content/profile";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkodvnod";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -58,8 +59,13 @@ export function Contact() {
                     <Mail className="size-5 text-cyan-400" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-muted-foreground mb-1">{t("contact.email")}</p>
-                    <a href={`mailto:${profile.email}`} className="hover:text-cyan-400 transition-colors break-all">
+                    <p className="text-xs font-semibold text-muted-foreground mb-1">
+                      {t("contact.email")}
+                    </p>
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="hover:text-cyan-400 transition-colors break-all"
+                    >
                       {profile.email}
                     </a>
                   </div>
@@ -69,18 +75,21 @@ export function Contact() {
                     <MapPin className="size-5 text-cyan-400" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-muted-foreground mb-1">{t("contact.location")}</p>
+                    <p className="text-xs font-semibold text-muted-foreground mb-1">
+                      {t("contact.location")}
+                    </p>
                     <p>{t("contact.location_value")}</p>
                   </div>
                 </div>
 
                 <div className="pt-5 border-t border-border">
-                  <p className="text-xs font-semibold text-muted-foreground mb-3">{t("contact.connect")}</p>
+                  <p className="text-xs font-semibold text-muted-foreground mb-3">
+                    {t("contact.connect")}
+                  </p>
                   <div className="flex gap-2">
                     {[
                       { href: profile.github, Icon: Github, label: "GitHub" },
-                      { href: profile.linkedin, Icon: Linkedin, label: "LinkedIn" },
-                      { href: profile.telegram, Icon: MessageSquare, label: "Telegram" },
+                      { href: profile.telegram, Icon: Send, label: "Telegram" },
                     ].map(({ href, Icon, label }) => (
                       <a
                         key={label}
@@ -100,7 +109,9 @@ export function Contact() {
 
             <div className="rounded-2xl p-6 bg-linear-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30">
               <h4 className="text-lg font-semibold mb-2">{t("contact.opportunities")}</h4>
-              <p className="text-sm text-foreground/70 leading-relaxed">{t("contact.opportunities_desc")}</p>
+              <p className="text-sm text-foreground/70 leading-relaxed">
+                {t("contact.opportunities_desc")}
+              </p>
             </div>
           </motion.div>
 
@@ -115,12 +126,33 @@ export function Contact() {
             <h3 className="text-2xl font-bold mb-2">{t("contact.form.title")}</h3>
 
             <div className="grid md:grid-cols-2 gap-4">
-              <Field label={t("contact.form.name")} id="name" name="name" placeholder={t("contact.form.name_placeholder")} required />
-              <Field label={t("contact.email")} id="email" name="email" type="email" placeholder={t("contact.form.email_placeholder")} required />
+              <Field
+                label={t("contact.form.name")}
+                id="name"
+                name="name"
+                placeholder={t("contact.form.name_placeholder")}
+                required
+              />
+              <Field
+                label={t("contact.email")}
+                id="email"
+                name="email"
+                type="email"
+                placeholder={t("contact.form.email_placeholder")}
+                required
+              />
             </div>
-            <Field label={t("contact.form.subject")} id="subject" name="subject" placeholder={t("contact.form.subject_placeholder")} />
+            <Field
+              label={t("contact.form.subject")}
+              id="subject"
+              name="subject"
+              placeholder={t("contact.form.subject_placeholder")}
+            />
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-muted-foreground mb-2"
+              >
                 {t("contact.form.message")}
               </label>
               <textarea
@@ -134,13 +166,19 @@ export function Contact() {
             </div>
 
             {status === "success" && (
-              <div role="status" className="flex items-start gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-500">
+              <div
+                role="status"
+                className="flex items-start gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-500"
+              >
                 <CheckCircle2 className="size-5 shrink-0" />
                 <span>{t("contact.form.success")}</span>
               </div>
             )}
             {status === "error" && (
-              <div role="alert" className="flex items-start gap-2 rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-500">
+              <div
+                role="alert"
+                className="flex items-start gap-2 rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-500"
+              >
                 <AlertCircle className="size-5 shrink-0" />
                 <span>{t("contact.form.error")}</span>
               </div>

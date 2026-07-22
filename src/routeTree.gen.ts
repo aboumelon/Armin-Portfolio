@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsAlprRouteImport } from './routes/projects.alpr'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
-import { Route as AdminSyncRouteImport } from './routes/admin.sync'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,42 +28,33 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminSyncRoute = AdminSyncRouteImport.update({
-  id: '/admin/sync',
-  path: '/admin/sync',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/admin/sync': typeof AdminSyncRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin/sync': typeof AdminSyncRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/admin/sync': typeof AdminSyncRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin/sync' | '/projects/$slug' | '/projects/alpr'
+  fullPaths: '/' | '/projects/$slug' | '/projects/alpr'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin/sync' | '/projects/$slug' | '/projects/alpr'
-  id: '__root__' | '/' | '/admin/sync' | '/projects/$slug' | '/projects/alpr'
+  to: '/' | '/projects/$slug' | '/projects/alpr'
+  id: '__root__' | '/' | '/projects/$slug' | '/projects/alpr'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdminSyncRoute: typeof AdminSyncRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsAlprRoute: typeof ProjectsAlprRoute
 }
@@ -92,19 +82,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/sync': {
-      id: '/admin/sync'
-      path: '/admin/sync'
-      fullPath: '/admin/sync'
-      preLoaderRoute: typeof AdminSyncRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdminSyncRoute: AdminSyncRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsAlprRoute: ProjectsAlprRoute,
 }
