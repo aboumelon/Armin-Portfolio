@@ -84,7 +84,7 @@ export const projects: Project[] = [
     image: alprCover,
     github: "https://github.com/aboumelon",
     demo: "https://alpr-front.vercel.app",
-    videoUrl: "https://youtu.be/FgpcCHHnpbw",
+    videoUrl: "https://youtu.be/rT_JqXsQAE4",
   },
   {
     slug: "portfolio",
