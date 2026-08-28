@@ -132,6 +132,21 @@ function ProjectDetailPage() {
           </motion.section>
         )}
 
+        {!project.videoUrl && project.image && (
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mt-12 glass-card rounded-2xl overflow-hidden"
+          >
+            <img
+              src={project.image}
+              alt={t(project.titleKey)}
+              className="w-full h-auto"
+            />
+          </motion.section>
+        )}
+
         {/* Tech stack */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}

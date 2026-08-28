@@ -51,6 +51,10 @@
         "title": "Armin Portfolio",
         "desc": "My bilingual personal portfolio built on TanStack Start, utilizing Radix UI primitives and Tailwind CSS for a highly performant, accessible, and beautifully animated user experience."
       },
+      "vpngateLinux": {
+        "title": "vpngate-linux — Safe VPN Manager",
+        "desc": "A safety-focused Linux VPN Gate client that manages SoftEther, routing, DNS, DHCP, IPv6 leak protection, recovery, and real TCP latency measurements through a transactional CLI and terminal interface."
+      },
       "shop": {
         "title": "Shop Redux",
         "desc": "A shop interface built with React and Redux, styled with SCSS — cart, filters and clean state management."

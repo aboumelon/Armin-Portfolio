@@ -1,4 +1,5 @@
 import alprCover from "@/assets/alpr-cover.jpg";
+import vpngateLinuxCover from "@/assets/vpngate-linux-cover.png";
 
 export const profile = {
   name: "Armin Aboutalebi",
@@ -94,6 +95,18 @@ export const projects: Project[] = [
     featured: false,
     href: "/projects/portfolio",
     github: "https://github.com/aboumelon/Armin-Portfolio",
+    demo: null,
+    videoUrl: null,
+  },
+  {
+    slug: "vpngate-linux",
+    titleKey: "projects.items.vpngateLinux.title",
+    descKey: "projects.items.vpngateLinux.desc",
+    tags: ["Python", "Linux", "SoftEther", "systemd", "Textual"],
+    featured: false,
+    href: "/projects/vpngate-linux",
+    image: vpngateLinuxCover,
+    github: "https://github.com/aboumelon/vpngate-linux",
     demo: null,
     videoUrl: null,
   },
