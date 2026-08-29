@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 import { ArrowLeft, ExternalLink, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Github as GithubIcon } from "@/components/icons";
+import { YoutubeAccessNotice } from "@/components/YoutubeAccessNotice";
 import { projects } from "@/content/profile";
+import { isYoutubeUrl } from "@/lib/video";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -49,9 +51,11 @@ function ProjectNotFound() {
 function ProjectDetailPage() {
   const { project } = Route.useLoaderData();
   const { t } = useTranslation();
+  const hasYoutubeVideo = Boolean(project.videoUrl && isYoutubeUrl(project.videoUrl));
 
   return (
     <main className="pt-32 pb-24 relative">
+      {hasYoutubeVideo && <YoutubeAccessNotice />}
       <div className="container-x max-w-4xl">
         <Link
           to="/"

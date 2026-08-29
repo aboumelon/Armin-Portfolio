@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
+import { YoutubeAccessNotice } from "@/components/YoutubeAccessNotice";
 import { projects } from "@/content/profile";
+import { isYoutubeUrl } from "@/lib/video";
 
 export const Route = createFileRoute("/projects/alpr")({
   head: () => ({
@@ -22,11 +24,13 @@ function AlprPage() {
   
   // پیدا کردن دیتای پروژه ALPR برای گرفتن لینک ویدیو
   const alprProject = projects.find(p => p.slug === "alpr");
+  const hasYoutubeVideo = Boolean(alprProject?.videoUrl && isYoutubeUrl(alprProject.videoUrl));
   
   const stack = ["FastAPI", "Python", "OpenCV", "React", "TypeScript", "WebSockets"];
   
   return (
     <main className="pt-32 pb-24 relative">
+      {hasYoutubeVideo && <YoutubeAccessNotice />}
       <div className="container-x max-w-3xl">
         <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-cyan-400 transition mb-10">
           <ArrowLeft className="size-4 rtl:rotate-180" />
