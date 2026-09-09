@@ -26,7 +26,7 @@
     "realtime": "Real-Time & CV",
     "realtime_desc": "Low-latency streaming pipelines and computer vision processing using OpenCV — from automated license plate recognition to live monitoring dashboards.",
     "fullstack": "Full-Stack Delivery",
-    "fullstack_desc": "End-to-end ownership: design, ship, monitor, iterate. One person, one product, full stack."
+    "fullstack_desc": "Delivery across the product lifecycle: design, build, ship, monitor, and iterate—with clear collaboration at every boundary."
   },
   "skills": {
     "title": "Skills & Technologies",
@@ -41,11 +41,11 @@
     "subtitle": "A few selected projects that showcase the way I build.",
     "featured_badge": "Featured Project",
     "other_title": "Other Projects",
-    "view_case": "View case study",
+    "view_case": "View details",
     "items": {
       "alpr": {
-        "title": "ALPR — Automatic License Plate Recognition",
-        "desc": "A production-grade Automatic License Plate Recognition system featuring a FastAPI inference backend powered by OpenCV pipelines, and a real-time React dashboard for live tracking and advanced analytics."
+        "title": "ALPR — Professional Experience",
+        "desc": "Selected full-stack and computer-vision contributions to an employer-owned, team-developed platform for real-time vehicle monitoring."
       },
       "portfolio": {
         "title": "Armin Portfolio",
@@ -73,7 +73,7 @@
       "0": {
         "role": "Full-Stack Developer",
         "company": "Amic",
-        "desc": "Building bilingual web apps and AI-powered tools end-to-end, including the ALPR system."
+        "desc": "Contributing to bilingual web applications and AI-assisted systems across frontend, backend, and real-time integrations."
       },
       "1": {
         "role": "Frontend Engineer",
@@ -115,13 +115,16 @@
   },
   "alpr": {
     "back": "Back to home",
+    "eyebrow": "Professional Experience",
+    "disclosure_title": "Scope and ownership",
+    "disclosure": "This is an employer-owned, team-developed proprietary project. This page describes only my selected engineering contributions and intentionally excludes source code, customer data, production screens, internal performance figures, and proprietary implementation details.",
     "overview_title": "Overview",
-    "overview": "An end-to-end Automatic License Plate Recognition (ALPR) system designed for real-time vehicular monitoring. The architecture consists of a high-throughput FastAPI backend handling heavy machine learning inference and OpenCV image processing pipelines, paired with an interactive Next.js dashboard that streams live recognition events, visualizes analytics, and manages historical query data.",
+    "overview": "I contributed to selected parts of a team-developed Automatic License Plate Recognition platform used for real-time vehicle-monitoring workflows. My work involved full-stack integration across Python services, computer-vision processing, APIs, and a web dashboard.",
     "stack_title": "Stack",
-    "challenges_title": "Challenges",
-    "challenges": "1. Optimizing OpenCV preprocessing and detection models to maintain a sub-50ms inference loop. 2. Architecting a reliable real-time messaging pipeline over WebSockets to stream recognized plates without dropping frames or causing UI lag under high traffic. 3. Designing robust image normalization techniques to handle diverse environmental factors like poor lighting, extreme angles, and vehicle speed.",
-    "result_title": "Result",
-    "result": "Successfully engineered a low-latency, resilient pipeline with distinct boundary separation between computer vision preprocessing, OCR extraction, and the dashboard presentation layer. The final system achieves over 95% recognition accuracy on test streams with seamless real-time UI updates."
+    "challenges_title": "Selected contributions",
+    "challenges": "Contributed to backend image-processing workflows, API boundaries, real-time event delivery, and dashboard integration. The work required coordinating asynchronous processing with a responsive operator interface while keeping the system maintainable across service boundaries.",
+    "result_title": "What I learned",
+    "result": "This experience strengthened my ability to connect computer-vision workloads with production web systems, reason about real-time data flow, and collaborate on a multi-service product without exposing confidential implementation details."
   },
   "youtube_notice": {
     "title": "A note about video playback",
