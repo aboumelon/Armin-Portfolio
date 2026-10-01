@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, PlayCircle, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { Github as GithubIcon } from "@/components/icons";
+import { YoutubeAccessNotice } from "@/components/YoutubeAccessNotice";
 import { projects } from "@/content/profile";
 
 export const Route = createFileRoute("/projects/fortune-wheel")({
@@ -34,6 +35,7 @@ function FortuneWheelPage() {
 
   return (
     <main className="pt-32 pb-24 relative">
+      <YoutubeAccessNotice />
       <div className="container-x max-w-4xl">
         <Link
           to="/"
@@ -77,34 +79,20 @@ function FortuneWheelPage() {
           </div>
         </motion.header>
 
-        {project.image && (
-          <motion.section
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mt-12 overflow-hidden rounded-2xl glass-card"
-          >
-            <img
-              src={project.image}
-              alt={t(project.titleKey)}
-              className="w-full aspect-video object-cover"
-            />
-          </motion.section>
-        )}
-
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 }}
-          className="mt-6 overflow-hidden rounded-2xl border border-dashed border-cyan-500/35 bg-cyan-500/5"
+          transition={{ delay: 0.1 }}
+          className="mt-12 overflow-hidden rounded-2xl glass-card"
         >
-          <div className="flex aspect-video flex-col items-center justify-center gap-3 p-8 text-center">
-            <div className="grid size-16 place-items-center rounded-full border border-cyan-500/30 bg-cyan-500/10">
-              <PlayCircle className="size-8 text-cyan-400" />
-            </div>
-            <h2 className="text-xl font-semibold">{t("fortuneWheel.video_soon")}</h2>
-            <p className="max-w-md text-sm text-muted-foreground">{t("fortuneWheel.video_hint")}</p>
-          </div>
+          <h2 className="sr-only">{t("fortuneWheel.video_title")}</h2>
+          <iframe
+            src="https://www.youtube.com/embed/p7FBILw5Vlk"
+            title={t("fortuneWheel.video_title")}
+            className="aspect-video w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </motion.section>
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">

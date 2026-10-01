@@ -123,8 +123,6 @@
     "summary": "A polished Persian RTL prize-wheel experience backed by strict server-side award integrity. The browser animates a result chosen and persisted by Django; it never selects or submits the prize itself.",
     "source": "View source",
     "video_title": "Demo video",
-    "video_soon": "Demo video coming soon",
-    "video_hint": "This space is ready for the YouTube walkthrough.",
     "overview_title": "The challenge",
     "overview": "Build a responsive prize wheel where administrators preassign coupons, users receive exactly the intended award, and retries or interrupted requests cannot consume extra coupons. The interface is fully localized in Persian and designed for right-to-left reading.",
     "architecture_title": "Reliability by design",

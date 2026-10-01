@@ -1,5 +1,4 @@
 import alprCover from "@/assets/alpr-cover.jpg";
-import fortuneWheelCover from "@/assets/fortune-wheel-cover.jpg";
 import vpngateLinuxCover from "@/assets/vpngate-linux-cover.png";
 
 export const profile = {
@@ -73,7 +72,6 @@ export type Project = {
   github: string | null;
   demo: string | null;
   videoUrl?: string | null;
-  videoComingSoon?: boolean;
 };
 
 export const projects: Project[] = [
@@ -96,11 +94,9 @@ export const projects: Project[] = [
     tags: ["Django", "React", "TypeScript", "PostgreSQL", "Docker"],
     featured: false,
     href: "/projects/fortune-wheel",
-    image: fortuneWheelCover,
     github: "https://github.com/aboumelon/fortune-wheel",
     demo: null,
-    videoUrl: null,
-    videoComingSoon: true,
+    videoUrl: "https://youtu.be/p7FBILw5Vlk",
   },
   {
     slug: "portfolio",
