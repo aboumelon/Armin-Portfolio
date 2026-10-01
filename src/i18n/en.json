@@ -47,6 +47,10 @@
         "title": "ALPR — Professional Experience",
         "desc": "Selected full-stack and computer-vision contributions to an employer-owned, team-developed platform for real-time vehicle monitoring."
       },
+      "fortuneWheel": {
+        "title": "Fortune Wheel — Full-Stack Challenge",
+        "desc": "A production-minded Persian RTL prize wheel with server-assigned awards, atomic coupon redemption, idempotent spins, recovery, and comprehensive frontend and backend tests."
+      },
       "portfolio": {
         "title": "Armin Portfolio",
         "desc": "My bilingual personal portfolio built on TanStack Start, utilizing Radix UI primitives and Tailwind CSS for a highly performant, accessible, and beautifully animated user experience."
@@ -112,6 +116,28 @@
       "error": "Something went wrong. Please try again or email me directly."
     },
     "footer": "© 2026 Full-Stack Developer Portfolio. Built with TanStack Start, React, and Tailwind CSS."
+  },
+  "fortuneWheel": {
+    "back": "Back to projects",
+    "eyebrow": "Full-Stack Recruitment Challenge",
+    "summary": "A polished Persian RTL prize-wheel experience backed by strict server-side award integrity. The browser animates a result chosen and persisted by Django; it never selects or submits the prize itself.",
+    "source": "View source",
+    "video_title": "Demo video",
+    "video_soon": "Demo video coming soon",
+    "video_hint": "This space is ready for the YouTube walkthrough.",
+    "overview_title": "The challenge",
+    "overview": "Build a responsive prize wheel where administrators preassign coupons, users receive exactly the intended award, and retries or interrupted requests cannot consume extra coupons. The interface is fully localized in Persian and designed for right-to-left reading.",
+    "architecture_title": "Reliability by design",
+    "architecture": "Coupon selection, redemption, and spin creation run inside one PostgreSQL transaction with row locking. Every spin uses a client-generated idempotency key, so replaying a request returns the original immutable award. Pending attempts survive reloads and remain isolated across browser tabs.",
+    "quality_title": "Quality and delivery",
+    "quality": "The project ships as a three-service Docker Compose stack with Django and Gunicorn, PostgreSQL, and an Nginx-served React build. Backend tests cover concurrency, rollback, ownership, authentication, CSRF, catalog rules, and audit immutability; frontend tests cover 288 rotation cases, protocol errors, recovery, accessibility, and dialog behavior.",
+    "highlights_title": "Engineering highlights",
+    "highlights": [
+      "Server-authoritative prizes with immutable historical snapshots",
+      "Exactly-once behavior through idempotency and transactional locking",
+      "Reload and multi-tab recovery without duplicate coupon consumption",
+      "Accessible, responsive Persian RTL interface with a twelve-sector wheel"
+    ]
   },
   "alpr": {
     "back": "Back to home",

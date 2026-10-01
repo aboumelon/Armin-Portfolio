@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsFortuneWheelRouteImport } from './routes/projects.fortune-wheel'
 import { Route as ProjectsAlprRouteImport } from './routes/projects.alpr'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsFortuneWheelRoute = ProjectsFortuneWheelRouteImport.update({
+  id: '/projects/fortune-wheel',
+  path: '/projects/fortune-wheel',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsAlprRoute = ProjectsAlprRouteImport.update({
@@ -33,30 +39,40 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
+  '/projects/fortune-wheel': typeof ProjectsFortuneWheelRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
+  '/projects/fortune-wheel': typeof ProjectsFortuneWheelRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
+  '/projects/fortune-wheel': typeof ProjectsFortuneWheelRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects/$slug' | '/projects/alpr'
+  fullPaths:
+    '/' | '/projects/$slug' | '/projects/alpr' | '/projects/fortune-wheel'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects/$slug' | '/projects/alpr'
-  id: '__root__' | '/' | '/projects/$slug' | '/projects/alpr'
+  to: '/' | '/projects/$slug' | '/projects/alpr' | '/projects/fortune-wheel'
+  id:
+    | '__root__'
+    | '/'
+    | '/projects/$slug'
+    | '/projects/alpr'
+    | '/projects/fortune-wheel'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsAlprRoute: typeof ProjectsAlprRoute
+  ProjectsFortuneWheelRoute: typeof ProjectsFortuneWheelRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +82,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/fortune-wheel': {
+      id: '/projects/fortune-wheel'
+      path: '/projects/fortune-wheel'
+      fullPath: '/projects/fortune-wheel'
+      preLoaderRoute: typeof ProjectsFortuneWheelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects/alpr': {
@@ -89,6 +112,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsAlprRoute: ProjectsAlprRoute,
+  ProjectsFortuneWheelRoute: ProjectsFortuneWheelRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
