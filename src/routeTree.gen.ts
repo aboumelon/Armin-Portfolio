@@ -10,18 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProjectsFortuneWheelRouteImport } from './routes/projects.fortune-wheel'
-import { Route as ProjectsAlprRouteImport } from './routes/projects.alpr'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as ProjectsAlprRouteImport } from './routes/projects.alpr'
+import { Route as ProjectsFortuneWheelRouteImport } from './routes/projects.fortune-wheel'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsFortuneWheelRoute = ProjectsFortuneWheelRouteImport.update({
-  id: '/projects/fortune-wheel',
-  path: '/projects/fortune-wheel',
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/projects/$slug',
+  path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsAlprRoute = ProjectsAlprRouteImport.update({
@@ -29,9 +29,9 @@ const ProjectsAlprRoute = ProjectsAlprRouteImport.update({
   path: '/projects/alpr',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
-  id: '/projects/$slug',
-  path: '/projects/$slug',
+const ProjectsFortuneWheelRoute = ProjectsFortuneWheelRouteImport.update({
+  id: '/projects/fortune-wheel',
+  path: '/projects/fortune-wheel',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -84,11 +84,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/fortune-wheel': {
-      id: '/projects/fortune-wheel'
-      path: '/projects/fortune-wheel'
-      fullPath: '/projects/fortune-wheel'
-      preLoaderRoute: typeof ProjectsFortuneWheelRouteImport
+    '/projects/$slug': {
+      id: '/projects/$slug'
+      path: '/projects/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects/alpr': {
@@ -98,11 +98,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsAlprRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/$slug': {
-      id: '/projects/$slug'
-      path: '/projects/$slug'
-      fullPath: '/projects/$slug'
-      preLoaderRoute: typeof ProjectsSlugRouteImport
+    '/projects/fortune-wheel': {
+      id: '/projects/fortune-wheel'
+      path: '/projects/fortune-wheel'
+      fullPath: '/projects/fortune-wheel'
+      preLoaderRoute: typeof ProjectsFortuneWheelRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
