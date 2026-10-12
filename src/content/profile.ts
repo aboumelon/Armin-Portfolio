@@ -150,6 +150,7 @@ export const experience = [
     year: "2025 — Now",
     roleKey: "experience.items.0.role",
     companyKey: "experience.items.0.company",
+    companyUrl: "https://amicworks.com",
     descKey: "experience.items.0.desc",
   },
   {

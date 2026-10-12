@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { ExternalLink } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 import { experience } from "@/content/profile";
 
@@ -24,10 +25,24 @@ export function Experience() {
               <div className="flex flex-col md:flex-row gap-5">
                 <div className="md:w-48 shrink-0">
                   <div className="inline-flex px-3 py-1.5 rounded-full bg-linear-to-r from-cyan-500/15 to-blue-500/15 border border-cyan-500/30">
-                    <span className="text-xs font-semibold text-cyan-500 dark:text-cyan-300 font-mono">{e.year}</span>
+                    <span className="text-xs font-semibold text-cyan-500 dark:text-cyan-300 font-mono">
+                      {e.year}
+                    </span>
                   </div>
                   <h4 className="text-lg font-bold mt-3">{t(e.roleKey)}</h4>
                   <p className="text-muted-foreground text-sm mt-1">{t(e.companyKey)}</p>
+                  {e.companyUrl && (
+                    <a
+                      href={e.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      dir="ltr"
+                      className="inline-flex items-center gap-1.5 mt-2 text-sm text-cyan-500 dark:text-cyan-300 hover:underline rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+                    >
+                      {new URL(e.companyUrl).hostname}
+                      <ExternalLink className="size-3.5" aria-hidden="true" />
+                    </a>
+                  )}
                 </div>
                 <div className="flex-1">
                   <p className="text-foreground/80 text-sm leading-relaxed">{t(e.descKey)}</p>
