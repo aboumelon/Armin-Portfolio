@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 import { Route as ProjectsAlprRouteImport } from './routes/projects.alpr'
 import { Route as ProjectsFortuneWheelRouteImport } from './routes/projects.fortune-wheel'
+import { Route as ProjectsN8nCiTriageRouteImport } from './routes/projects.n8n-ci-triage'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const ProjectsFortuneWheelRoute = ProjectsFortuneWheelRouteImport.update({
   path: '/projects/fortune-wheel',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsN8nCiTriageRoute = ProjectsN8nCiTriageRouteImport.update({
+  id: '/projects/n8n-ci-triage',
+  path: '/projects/n8n-ci-triage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
   '/projects/fortune-wheel': typeof ProjectsFortuneWheelRoute
+  '/projects/n8n-ci-triage': typeof ProjectsN8nCiTriageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
   '/projects/fortune-wheel': typeof ProjectsFortuneWheelRoute
+  '/projects/n8n-ci-triage': typeof ProjectsN8nCiTriageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,19 +61,30 @@ export interface FileRoutesById {
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/alpr': typeof ProjectsAlprRoute
   '/projects/fortune-wheel': typeof ProjectsFortuneWheelRoute
+  '/projects/n8n-ci-triage': typeof ProjectsN8nCiTriageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/projects/$slug' | '/projects/alpr' | '/projects/fortune-wheel'
+    | '/'
+    | '/projects/$slug'
+    | '/projects/alpr'
+    | '/projects/fortune-wheel'
+    | '/projects/n8n-ci-triage'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects/$slug' | '/projects/alpr' | '/projects/fortune-wheel'
+  to:
+    | '/'
+    | '/projects/$slug'
+    | '/projects/alpr'
+    | '/projects/fortune-wheel'
+    | '/projects/n8n-ci-triage'
   id:
     | '__root__'
     | '/'
     | '/projects/$slug'
     | '/projects/alpr'
     | '/projects/fortune-wheel'
+    | '/projects/n8n-ci-triage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -73,6 +92,7 @@ export interface RootRouteChildren {
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsAlprRoute: typeof ProjectsAlprRoute
   ProjectsFortuneWheelRoute: typeof ProjectsFortuneWheelRoute
+  ProjectsN8nCiTriageRoute: typeof ProjectsN8nCiTriageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -105,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsFortuneWheelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/n8n-ci-triage': {
+      id: '/projects/n8n-ci-triage'
+      path: '/projects/n8n-ci-triage'
+      fullPath: '/projects/n8n-ci-triage'
+      preLoaderRoute: typeof ProjectsN8nCiTriageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -113,6 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsAlprRoute: ProjectsAlprRoute,
   ProjectsFortuneWheelRoute: ProjectsFortuneWheelRoute,
+  ProjectsN8nCiTriageRoute: ProjectsN8nCiTriageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

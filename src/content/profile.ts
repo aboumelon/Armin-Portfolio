@@ -1,4 +1,5 @@
 import alprCover from "@/assets/alpr-cover.jpg";
+import ciTriageCover from "@/assets/n8n-ci-triage-cover.svg";
 import vpngateLinuxCover from "@/assets/vpngate-linux-cover.png";
 
 export const profile = {
@@ -84,6 +85,18 @@ export const projects: Project[] = [
     href: "/projects/alpr",
     image: alprCover,
     github: null,
+    demo: null,
+    videoUrl: null,
+  },
+  {
+    slug: "n8n-ci-triage",
+    titleKey: "projects.items.ciTriage.title",
+    descKey: "projects.items.ciTriage.desc",
+    tags: ["n8n", "Python", "FastAPI", "PostgreSQL", "Docker", "GitHub Actions"],
+    featured: false,
+    href: "/projects/n8n-ci-triage",
+    image: ciTriageCover,
+    github: "https://github.com/aboumelon/n8n-ci-triage",
     demo: null,
     videoUrl: null,
   },

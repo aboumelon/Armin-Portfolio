@@ -47,6 +47,10 @@
         "title": "ALPR — Professional Experience",
         "desc": "Selected full-stack and computer-vision contributions to an employer-owned, team-developed platform for real-time vehicle monitoring."
       },
+      "ciTriage": {
+        "title": "n8n CI Triage — Workflow Automation",
+        "desc": "A self-hosted CI triage system that turns GitHub Actions failures into evidence-based Issues and Telegram alerts, with n8n orchestration, persistent processing, and incident deduplication."
+      },
       "fortuneWheel": {
         "title": "Fortune Wheel — Full-Stack Challenge",
         "desc": "A production-minded Persian RTL prize wheel with server-assigned awards, atomic coupon redemption, idempotent spins, recovery, and comprehensive frontend and backend tests."
@@ -154,5 +158,42 @@
     "title": "A note about video playback",
     "description": "This demo is hosted on YouTube. If the video does not load, you may need to connect to a VPN first.",
     "confirm": "Got it"
+  },
+  "ciTriage": {
+    "back": "Back to projects",
+    "eyebrow": "Personal Project · Backend & Workflow Automation",
+    "summary": "From failed GitHub Actions runs to actionable incident reports: a self-hosted automation system built around n8n, Python, and PostgreSQL.",
+    "source": "View source",
+    "incident": "View incident history",
+    "cover_alt": "CI Triage architecture: GitHub Actions, a Python gateway, n8n orchestration, PostgreSQL, GitHub Issues, and Telegram.",
+    "overview_title": "The problem",
+    "overview": "CI failures are easy to miss, while repeated alerts can hide the same underlying incident. This project collects the failed job and step, extracts log evidence, classifies the failure with deterministic rules, and keeps a shared incident history with recovery updates.",
+    "flow_title": "How it works",
+    "flow": {
+      "receive": {
+        "title": "Receive and persist",
+        "desc": "The FastAPI gateway verifies GitHub webhook signatures, checks the repository allowlist, and stores completed runs in PostgreSQL before acknowledging delivery."
+      },
+      "process": {
+        "title": "Orchestrate and analyze",
+        "desc": "n8n claims queued work and sequences the processing stages with retries. The Python service retrieves logs and classifies dependency, test, lint, build, and unknown failures."
+      },
+      "publish": {
+        "title": "Publish and notify",
+        "desc": "Findings create or update GitHub Issues and generate Telegram notifications. A later successful run records recovery for the same workflow and branch."
+      }
+    },
+    "highlights_title": "Engineering highlights",
+    "highlights": [
+      "Durable processing with leased claims and recovery of pending work",
+      "Delivery deduplication and stable markers for repeated GitHub incidents",
+      "Rule-based findings backed by log evidence and suggested investigation",
+      "Secret redaction, authenticated internal APIs, and draft publication mode",
+      "Separate workflow orchestration and Python application logic",
+      "Docker Compose deployment with PostgreSQL and automated CI checks"
+    ],
+    "validation_title": "Deployed and verified",
+    "validation": "Deployed on a Freestyle VM and tested end to end with real GitHub Actions runs. Verification covered Issue creation, repeat-failure comments, recovery messages in GitHub and Telegram, and webhook-triggered wake-up from a manually paused VM.",
+    "validation_link": "Read the validation notes"
   }
 }
