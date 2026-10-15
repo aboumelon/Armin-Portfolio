@@ -92,7 +92,7 @@ export const projects: Project[] = [
     slug: "n8n-ci-triage",
     titleKey: "projects.items.ciTriage.title",
     descKey: "projects.items.ciTriage.desc",
-    tags: ["n8n", "Python", "FastAPI", "PostgreSQL", "Docker", "GitHub Actions"],
+    tags: ["n8n", "Python", "FastAPI", "PostgreSQL", "LLM", "Docker", "GitHub Actions"],
     featured: false,
     href: "/projects/n8n-ci-triage",
     image: ciTriageCover,

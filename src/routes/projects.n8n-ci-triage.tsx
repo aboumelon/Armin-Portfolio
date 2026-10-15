@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle2, ExternalLink, Workflow } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ExternalLink, Sparkles, Workflow } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Github as GithubIcon } from "@/components/icons";
 import { projects } from "@/content/profile";
@@ -12,13 +12,13 @@ export const Route = createFileRoute("/projects/n8n-ci-triage")({
       {
         name: "description",
         content:
-          "GitHub Actions failure triage with n8n orchestration, a FastAPI service, a durable PostgreSQL queue, GitHub Issues, and Telegram notifications.",
+          "GitHub Actions triage with n8n, FastAPI, PostgreSQL, validated AI explanations, GitHub Issues, and Telegram failure and recovery notifications.",
       },
       { property: "og:title", content: "n8n CI Triage — Backend & Automation Case Study" },
       {
         property: "og:description",
         content:
-          "Signed webhooks, persistent processing, incident deduplication, and verified failure and recovery notifications.",
+          "Evidence-based CI triage with optional structured AI advice, persistent processing, incident deduplication, and verified recovery notifications.",
       },
       { property: "og:url", content: "/projects/n8n-ci-triage" },
     ],
@@ -120,6 +120,28 @@ function CiTriagePage() {
               </li>
             ))}
           </ol>
+        </section>
+
+        <section className="mt-6 rounded-2xl glass-card p-6">
+          <h2 className="text-xl font-semibold flex items-center gap-2">
+            <Sparkles className="size-5 shrink-0 text-cyan-400" />
+            {t("ciTriage.ai_title")}
+          </h2>
+          <p className="mt-3 text-muted-foreground leading-relaxed">
+            {t("ciTriage.ai_description")}
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            {t("ciTriage.ai_scope")}
+          </p>
+          <a
+            href={`${project.github}/issues/4`}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:underline"
+          >
+            {t("ciTriage.ai_evidence")}
+            <ExternalLink className="size-4" />
+          </a>
         </section>
 
         <section className="mt-6 rounded-2xl glass-card p-6">
