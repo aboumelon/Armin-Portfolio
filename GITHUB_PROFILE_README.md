@@ -56,6 +56,7 @@
 > Selected personal projects and non-confidential professional experience are available on my **[portfolio](https://armin-aboutalebi.vercel.app)**.
 
 - **ALPR Platform — Professional Experience** 🔒 — Contributed to selected full-stack and computer-vision workflows in an employer-owned, team-developed proprietary platform. Source code, customer data, production screens, internal metrics, and proprietary implementation details are not published.
+- **[SupportDesk / Tarvio](https://github.com/aboumelon/support-desk)** — A production-grade Persian RTL real-time customer support platform built with FastAPI, React 19, PostgreSQL, pgvector, Celery, Redis, and WebSockets.
 - **[Fortune Wheel](https://github.com/aboumelon/fortune-wheel)** — A Persian RTL full-stack prize wheel with server-authoritative awards, atomic PostgreSQL coupon redemption, idempotent request recovery, and comprehensive Django and React tests.
 - **[Armin Portfolio](https://github.com/aboumelon/Armin-Portfolio)** — A bilingual, accessible portfolio built with TanStack Start, React, TypeScript, Tailwind CSS, and Radix UI.
 - **[vpngate-linux](https://github.com/aboumelon/vpngate-linux)** — A safety-focused Linux VPN Gate manager with transactional networking changes, recovery, and a terminal interface.

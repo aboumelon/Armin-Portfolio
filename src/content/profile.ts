@@ -89,6 +89,17 @@ export const projects: Project[] = [
     videoUrl: null,
   },
   {
+    slug: "support-desk",
+    titleKey: "projects.items.supportDesk.title",
+    descKey: "projects.items.supportDesk.desc",
+    tags: ["FastAPI", "React", "PostgreSQL", "Redis", "Celery", "Docker"],
+    featured: false,
+    href: "/projects/support-desk",
+    github: "https://github.com/aboumelon/support-desk",
+    demo: "https://tarvio-aboumelon.style.dev",
+    videoUrl: "https://youtu.be/K9SlTBTFivU",
+  },
+  {
     slug: "n8n-ci-triage",
     titleKey: "projects.items.ciTriage.title",
     descKey: "projects.items.ciTriage.desc",

@@ -47,6 +47,10 @@
         "title": "ALPR — Professional Experience",
         "desc": "Selected full-stack and computer-vision contributions to an employer-owned, team-developed platform for real-time vehicle monitoring."
       },
+      "supportDesk": {
+        "title": "Tarvio — Real-Time Support Desk & Knowledge Base",
+        "desc": "A production-grade, Persian RTL customer support and real-time chat platform built with FastAPI, React 19, PostgreSQL, pgvector, Celery task workers, Redis, and WebSockets with intelligent knowledge base retrieval (RAG)."
+      },
       "ciTriage": {
         "title": "n8n CI Triage — Workflow Automation",
         "desc": "Evidence-based GitHub Actions triage with n8n orchestration, persistent incident tracking, validated AI explanations, and Telegram failure and recovery alerts."
@@ -201,5 +205,13 @@
     "ai_description": "An optional OpenAI-compatible model receives up to three bounded, redacted findings and returns structured JSON with explanations, possible causes, and next checks. Python validates the response before it reaches GitHub or Telegram.",
     "ai_scope": "The model advises a reviewer. Rules determine failure categories and incident identity; API errors or invalid output preserve the ordinary evidence report. Successful CI runs skip the model.",
     "ai_evidence": "See a verified AI-enriched lint report"
+  },
+  "project": {
+    "back": "Back to projects",
+    "eyebrow": "Case Study",
+    "view_github": "View on GitHub",
+    "live_demo": "Live demo",
+    "stack": "Tech Stack",
+    "overview": "Overview"
   }
 }
